@@ -169,8 +169,8 @@ h1 {
 
 .content div {
     background: rgba(205, 241, 253, 0.729);
-    max-width: 80%;
-    margin-left: 100px;
+    /* max-width: 80%; */
+    /* margin-left: 100px; */
     margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
