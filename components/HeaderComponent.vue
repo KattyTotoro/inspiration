@@ -2,8 +2,8 @@
 
 <header>
 
-<div>
-<h1>Вдохновение</h1>
+<div style="position: relative;">
+<h1 :class="fly?fly:''">Вдохновение</h1>
 </div>
 
 <div class="topMenu">
@@ -38,4 +38,8 @@
 
 <script setup>
 const route = useRoute()
+const fly = ref('')
+onMounted(()=>{
+    fly.value = 'h1Fly'
+})
 </script>
