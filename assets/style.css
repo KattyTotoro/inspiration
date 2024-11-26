@@ -173,6 +173,7 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgb(134, 134, 134);
+    text-align: justify;
 }
 
 .article, .recipe {
@@ -180,6 +181,7 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgb(134, 134, 134);
+    text-align: justify;
 }
 
 .article img, .recipe img {
