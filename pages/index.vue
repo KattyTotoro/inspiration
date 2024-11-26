@@ -2,6 +2,7 @@
     <section class="content">
         <h1>Главная</h1>
 
+<div class="blockList">
         <div>
             <h2>Статья 5</h2>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam adipisci veniam error fugit nemo,
@@ -85,6 +86,7 @@
             <br>
             <a href="#">Подробнее Статья 1</a>
         </div>
+    </div>
 
     </section>
 </template>

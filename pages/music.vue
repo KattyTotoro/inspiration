@@ -2,6 +2,7 @@
     <section class="content">
         <h1>Музыка</h1>
 
+        <div class="blockList">
         <div>
             <h2>Композиция 8</h2>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam adipisci veniam error fugit nemo,
@@ -72,6 +73,7 @@
             quaerat sunt nam non dolores blanditiis.
             <br>
             <a href="#">Подробнее</a>
+        </div>
         </div>
 
     </section>
