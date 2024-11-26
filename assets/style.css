@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    height: 300px;
+    background: url(/img/sky.jpg) top/cover no-repeat fixed;
+}
+
+header h1 {
+    top: -120%;
+    left: -50%;
+    position: absolute;
+    font-family: serif;
+    font-style: italic;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 
+    0px 8px 13px rgba(0, 0, 0, 0.1), 
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+    animation: h1Fly 3s ease-in-out 0.5s forwards;
+}
+
+@keyframes h1Fly {
+    from {
+      top: -120%;
+      left: -50%;
+    }
+
+    to {
+      top: 18%;
+      left: 18%;
+    }
+  }
+
+/* Навигация-меню слева */
+nav {
+    position: relative;
+    max-width: fit-content;
+    max-height: 700px;
+    padding-top: 20px;
+    transform: translateX(-135px);
+    background: #fefcdf78;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    padding: 0;
+    box-shadow: 0 0 20px rgb(134, 134, 134);
+    transition: 1s;
+    animation: leftMenuFly 5s ease-in-out;
+}
+
+nav::after {
+    content: 'menu';
+    background: #c3eaf89f;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    padding: 10px 0;
+    width: 651px;
+    position: absolute;
+    left: 145px;
+    top: 650px;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+  }
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    /* background-color: #90c8f79a; */
+    margin: 20px 0;
+    transition: 1s;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: rgb(40, 65, 91);
+    padding: 20px;
+}
+
+nav ul a {
+    display: block;    
+}
+
+nav ul a:hover {
+    background-color: #b0bef4b6;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 16px #88baf38d;
+    transition: 0.8s;
+}
+
+nav:hover {
+    transform: translateX(-1px);
+    transition: 1s;
+  }
+
+  @keyframes leftMenuFly {
+    from {
+        transform: translateX(-280px);
+    }
+    to {
+        transform: translateX(-135px);
+    }
+  }
+
+/* Все кнопки верхнего меню */
+.topMenu {
+    display: flex;
+    position: relative;
+    top: 246px;
+    margin-left: 200px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Заголовок кнопки */
+.topMenuButton {
+    display: block;
+    width: 200px;
+    background: #dfeffe78;
+    padding: 10px 20px;
+    border: 3px solid #dfeffe;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 20px whitesmoke;
+    border-bottom: none;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-right: 1px;
+    text-shadow: 2px 2px 2px rgba(185, 206, 224, 0.4);
+    /* color: #fff; */
+    /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 
+                 0px 8px 13px rgba(0, 0, 0, 0.1), 
+                 0px 18px 23px rgba(0, 0, 0, 0.1); */
+
+}
+
+a.topMenuButton {
+    text-decoration: none;
+    color: rgb(40, 65, 91);
+    /* color: #fff; */
+    padding: 10px 20px;
+}
+
+.topMenuButton:hover {
+    cursor: pointer;
+}
+
+h1 {
+    margin: 30px 0px 50px;
+}
+
+/* Содержимое вкладки */
+.content {
+    margin-left: 200px;
+    border: 2px solid #dfeffe;
+    box-shadow: 0 20px 30px rgb(134, 134, 134);
+    border-top: none;
+    padding: 0 20px 20px 20px;
+    padding-bottom: 50px;
+    margin-top: -710px;
+}
+
+.content div {
+    background: rgba(205, 241, 253, 0.729);
+    max-width: 80%;
+    margin-left: 100px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(134, 134, 134);
+}
+
+footer {
+    margin-left: 200px;
+    padding: 20px;
+    background: rgba(123, 166, 194, 0.797);
+    height: 200px;
+    box-shadow: 0 0 20px rgb(134, 134, 134);
+    border-radius: 0 0 0 15px;
+}
+
+.currentLink {
+    background-color: #ffffff;
+}
