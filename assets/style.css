@@ -171,12 +171,12 @@ h1 {
 }
 
 .blockList {
-    margin-top: 60px;
+    padding: 60px;
 }
 
 .blockList > div {
     background: rgba(205, 241, 253, 0.729);
-    /* margin-top: 20px; */
+    margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgb(134, 134, 134);
