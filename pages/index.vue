@@ -1,7 +1,7 @@
 <template>
     <section class="content">
-        <h1>Главная</h1>
-
+        
+        
 <div class="blockList">
         <div>
             <h2>Статья 5</h2>

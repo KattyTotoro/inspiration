@@ -165,9 +165,9 @@ h1 {
     border: 2px solid #dfeffe;
     box-shadow: 0 20px 30px rgb(134, 134, 134);
     border-top: none;
-    padding: 20px;
+    padding: 0 20px 50px 20px;
     padding-bottom: 50px;
-    margin-top: -710px;
+    margin-top: -672px;
 }
 
 .blockList {
@@ -176,7 +176,7 @@ h1 {
 
 .blockList > div {
     background: rgba(205, 241, 253, 0.729);
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgb(134, 134, 134);
