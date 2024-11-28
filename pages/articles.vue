@@ -62,8 +62,7 @@
     </section>
 
     <section>
-        <h1>Список статей</h1>
-
+       
 <div class="blockList">
         <div>
             <h2>Статья 8</h2>

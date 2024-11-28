@@ -15,7 +15,7 @@ header h1 {
     position: absolute;
     font-family: serif;
     font-style: italic;
-    font-size: 4rem;
+    font-size: 7rem;
     color: #fff;
     text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 
     0px 8px 13px rgba(0, 0, 0, 0.1), 
@@ -23,7 +23,7 @@ header h1 {
 }
 
 .h1Fly {
-    animation: h1Fly 3s ease-in-out 0.5s forwards;
+    animation: h1Fly 2s ease-in-out 0.5s forwards;
 }
 
 @keyframes h1Fly {
@@ -116,9 +116,10 @@ nav:hover {
 
 /* Все кнопки верхнего меню */
 .topMenu {
+    max-width: fit-content;
     display: flex;
     position: relative;
-    top: 246px;
+    top: 250px;
     margin-left: 200px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -135,7 +136,6 @@ nav:hover {
     border-bottom: none;
     text-align: center;
     font-size: 1.5rem;
-    margin-right: 3px;
     text-shadow: 2px 2px 2px rgba(185, 206, 224, 0.4);
     /* color: #fff; */
     /* text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 
@@ -165,9 +165,13 @@ h1 {
     border: 2px solid #dfeffe;
     box-shadow: 0 20px 30px rgb(134, 134, 134);
     border-top: none;
-    padding: 0 20px 20px 20px;
+    padding: 20px;
     padding-bottom: 50px;
     margin-top: -710px;
+}
+
+.blockList {
+    margin-top: 60px;
 }
 
 .blockList > div {

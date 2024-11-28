@@ -1,7 +1,6 @@
 <template>
     <section class="content">
-        <h1>Видео</h1>
-
+       
         <div class="blockList">
 
         <div>

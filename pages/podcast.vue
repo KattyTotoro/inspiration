@@ -1,7 +1,6 @@
 <template>
     <section class="content">
-        <h1>Подкаст</h1>
-
+       
         <div class="blockList">
 
         <div>

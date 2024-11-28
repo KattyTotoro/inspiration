@@ -1,7 +1,6 @@
 <template>
     <section class="content">
-        <h1>Музыка</h1>
-
+       
         <div class="blockList">
         <div>
             <h2>Композиция 8</h2>

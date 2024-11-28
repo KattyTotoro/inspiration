@@ -53,8 +53,7 @@
         </section>
 
         <section>
-            <h1>Рецепты</h1>
-
+            
             <div class="blockList">
 
                 <div>
