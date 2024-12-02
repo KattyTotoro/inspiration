@@ -155,13 +155,11 @@ a.topMenuButton {
     cursor: pointer;
 }
 
-h1 {
-    margin: 30px 0px 50px;
-}
 
 /* Содержимое вкладки */
 .content {
     margin-left: 200px;
+    font-family: sans-serif;
     border: 2px solid #dfeffe;
     box-shadow: 0 20px 30px rgb(134, 134, 134);
     border-top: none;
@@ -170,8 +168,21 @@ h1 {
     margin-top: -672px;
 }
 
+.content h1 {
+    margin: 0;
+    padding-top: 50px;
+    font-size: 2rem;
+    font-style: italic;
+    text-shadow: 2px 2px 2px rgba(185, 206, 224, 0.4);
+}
+
 .blockList {
     padding: 60px;
+}
+
+.blockList h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .blockList > div {

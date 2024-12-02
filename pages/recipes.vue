@@ -2,6 +2,8 @@
 
     <div class="content" style="display: flex;">
 
+    <h1>Живое питание.</h1>
+
         <section class="recipes">
 
             <div class="recipe">
