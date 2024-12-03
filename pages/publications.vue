@@ -5,8 +5,15 @@
 <strong>Путеводители среди знаний.</strong>
 
 <div>
+
   <p v-if="!publications.length">Публикаций пока нет</p>
-  <div v-else></div>
+  <div v-else class="grid"></div>
+  <div class="publication" v-for="publication of publications" :key="publication.id">
+    <NuxtImg :src="`img/${publication.img}`"/>
+    <h2><a href="">{{ publication.title }}</a></h2>
+    <p>{{ publication.preview }}</p>
+  </div>
+
 </div>
 
     </section>
@@ -24,6 +31,8 @@ useSeoMeta({
 })
 
 
-const publications = []
+const publications = [
+  {id: 1, title: 'First publication', text: 'Text text text text', preview: 'Peview...', img: 'summary_small_image.png',}
+]
 
 </script>
