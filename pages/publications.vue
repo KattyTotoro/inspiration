@@ -9,7 +9,7 @@
   <p v-if="!publications.length">Публикаций пока нет</p>
   <div v-else class="grid"></div>
   <div class="publication" v-for="publication of publications" :key="publication.id">
-    <!-- <NuxtImg :src="`img/${publication.img}`"/> -->
+    <NuxtImg :src="`img/${publication.img}`"/>
     <!-- <NuxtImg :src="`img/${publication.img}`"></NuxtImg> -->
     <h2><a href="">{{ publication.title }}</a></h2>
     <p>{{ publication.preview }}</p>
