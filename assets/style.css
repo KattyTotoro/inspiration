@@ -223,3 +223,8 @@ footer {
 .currentLink {
     background-color: #ffffff;
 }
+
+.post a {
+    text-decoration: underline;
+    color: blue;
+}
