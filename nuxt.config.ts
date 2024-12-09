@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
 
-  vite: {
-    base: '/nuxt/'
+  app: {
+    baseURL: '/inspiration/'
   },
 
   modules: ['@nuxt/image']
