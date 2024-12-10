@@ -6,9 +6,9 @@
 
 <div>
 
-  <p v-if="!posts.length">Публикаций пока нет</p>
+  <p v-if="!postsStore.posts.length">Публикаций пока нет</p>
   <div v-else class="grid">
-    <div class="post" v-for="post of posts" :key="post.id">
+    <div class="post" v-for="post of postsStore.posts" :key="post.id">
       <NuxtImg :src="`img/${post.img}`" sizes="300px"/>
       <h2><NuxtLink :to="`/posts/${post.id}_${post.title.toLowerCase().replaceAll(' ','_')}`">{{ post.title }}</NuxtLink></h2>
       <p>{{ post.preview }}</p>
@@ -31,12 +31,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+const postsStore = usePosts()
 
-const posts = [
-  {id: 3, rubric: '', title: 'Third post', text: 'ВДОХНОВЕНИЕ - это Видеть, слышать, чувствовать…. Восхвалять творение, быть его частью ежесекундно! Приглашаем вместе учиться ведать Божественные энергии, делиться Радостью и Знаниями.', preview: 'third Peview ВДОХНОВЕНИЕ - это Видеть, слышать, чувствовать….', img: 'inspirationLargeImage.png',},
-  {id: 2, rubric: '', title: 'Second post', text: 'Second Text text text text', preview: 'SecondPeview...', img: 'summary_small_image.png',},
-  {id: 1, rubric: '', title: 'First post', text: 'Text text text text', preview: 'Peview...', img: 'summary_large_image.png',},
-]
 
 </script>
 

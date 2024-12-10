@@ -11,7 +11,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const id = route.params.id_title.toString().split('_',1)[0]
-
+const postsStore = usePosts()
 </script>
 
 <style scoped>
