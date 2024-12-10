@@ -1,0 +1,9 @@
+.tt button {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.tiptap p {
+    color: green;
+}

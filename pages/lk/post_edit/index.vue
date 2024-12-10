@@ -1,21 +1,21 @@
 <template>
     <section class="content">
 
-<h1>Сайт Вдохновение. Транслирование знаний.</h1>
-<strong>Путеводители среди знаний.</strong>
+      <h1>Сайт Вдохновение. Транслирование знаний.</h1>
+      <strong>Путеводители среди знаний.</strong>
 
-<div>
+      <div>
 
-  <p v-if="!postsStore.posts.length">Публикаций пока нет</p>
-  <div v-else class="grid">
-    <div class="post" v-for="post of postsStore.posts" :key="post.id">
-      <NuxtImg :src="`img/${post.img}`" sizes="300px"/>
-      <h2><NuxtLink :to="`/posts/${post.id}_${post.title.toLowerCase().replaceAll(' ','_')}`">{{ post.title }}</NuxtLink></h2>
-      <p>{{ post.preview }}</p>
-    </div>
-  </div>
+        <p v-if="!postsStore.posts.length">Публикаций пока нет</p>
+        <div v-else class="grid">
+          <div class="post" v-for="post of postsStore.posts" :key="post.id">
+            <NuxtImg :src="`img/${post.img}`" sizes="300px"/>
+            <h2><NuxtLink :to="`/lk/post_edit/${post.id}`">{{ post.title }}</NuxtLink></h2>
+            <p>{{ post.preview }}</p>
+          </div>
+        </div>
 
-</div>
+      </div>
 
     </section>
 </template>

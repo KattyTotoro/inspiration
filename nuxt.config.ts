@@ -7,5 +7,5 @@ export default defineNuxtConfig({
     baseURL: '/inspiration/'
   },
 
-  modules: ['@nuxt/image']
+  modules: ['@nuxt/image', '@pinia/nuxt', 'nuxt-tiptap-editor']
 })
