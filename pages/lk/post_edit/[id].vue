@@ -1,6 +1,6 @@
 <template>
 <section class="content tt">
-    <input type="text" v-model="post.title">
+    <input class="myEditor" type="text" v-model="post.title">
     <div v-if="editor">
     <button
         @click="editor.chain().focus().toggleBold().run()"
@@ -42,6 +42,7 @@
     >
         paragraph
     </button>
+
     <button
         @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
         :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }"
@@ -78,6 +79,7 @@
     >
         h6
     </button>
+    <br>
     <button
         @click="editor.chain().focus().toggleBulletList().run()"
         :class="{ 'is-active': editor.isActive('bulletList') }"
@@ -183,4 +185,6 @@ unref(editor).destroy();
 
 <style>
 @import url(~/assets/tiptap.css);
+
+
 </style>
