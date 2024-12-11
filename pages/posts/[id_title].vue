@@ -1,6 +1,7 @@
 <template>
   <section class="content">
-  <div class="post">
+  
+  <div class="postPage">
   {{ route.params.id_title }}
   <br>
   {{ id }}

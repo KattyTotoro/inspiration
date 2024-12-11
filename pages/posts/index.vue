@@ -7,7 +7,7 @@
 <div>
 
   <p v-if="!postsStore.posts.length">Публикаций пока нет</p>
-  <div v-else class="grid">
+  <div v-else class="blockList">
     <div class="post" v-for="post of postsStore.posts" :key="post.id">
       <NuxtImg :src="`img/${post.img}`" sizes="300px"/>
       <h2><NuxtLink :to="`/posts/${post.id}_${post.title.toLowerCase().replaceAll(' ','_')}`">{{ post.title }}</NuxtLink></h2>
@@ -40,13 +40,13 @@ const postsStore = usePosts()
 
 <style scoped>
 
-.grid {
+/* .grid {
   display: grid;
   grid-template-columns: 300px 300px 300px;
   gap: 20px;
   margin: 50px auto;
   width: 940px;
-}
+} */
 
 
 </style>
