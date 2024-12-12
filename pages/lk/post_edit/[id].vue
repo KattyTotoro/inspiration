@@ -1,5 +1,5 @@
 <template>
-<section class="content tt">
+<section v-if="post" class="content tt">
     <input class="myEditor" type="text" v-model="post.title">
     <div v-if="editor">
     <button
@@ -125,42 +125,16 @@
     </div>
     <TiptapEditorContent :editor="editor" />
     <button @click="save">save</button>
-    <NuxtLink :to="`/posts/${post.id}_${post.title.toLowerCase().replaceAll(' ','_')}`">{{ post.title }}</NuxtLink>
+    <NuxtLink :to="`/posts/${post.id}_${post.title_en}`">{{ post.title }}</NuxtLink>
+    
+    <template v-for="el of components">
+        <component :is="el.component">{{ el.content }}</component>
+    </template>
+
 </section>
 </template>
 
-<script setup>
-
-function translit(word){
-	var answer = '';
-	var converter = {
-		'а': 'a',    'б': 'b',    'в': 'v',    'г': 'g',    'д': 'd',
-		'е': 'e',    'ё': 'e',    'ж': 'zh',   'з': 'z',    'и': 'i',
-		'й': 'y',    'к': 'k',    'л': 'l',    'м': 'm',    'н': 'n',
-		'о': 'o',    'п': 'p',    'р': 'r',    'с': 's',    'т': 't',
-		'у': 'u',    'ф': 'f',    'х': 'h',    'ц': 'c',    'ч': 'ch',
-		'ш': 'sh',   'щ': 'sch',  'ь': '',     'ы': 'y',    'ъ': '',
-		'э': 'e',    'ю': 'yu',   'я': 'ya',
- 
-		'А': 'A',    'Б': 'B',    'В': 'V',    'Г': 'G',    'Д': 'D',
-		'Е': 'E',    'Ё': 'E',    'Ж': 'Zh',   'З': 'Z',    'И': 'I',
-		'Й': 'Y',    'К': 'K',    'Л': 'L',    'М': 'M',    'Н': 'N',
-		'О': 'O',    'П': 'P',    'Р': 'R',    'С': 'S',    'Т': 'T',
-		'У': 'U',    'Ф': 'F',    'Х': 'H',    'Ц': 'C',    'Ч': 'Ch',
-		'Ш': 'Sh',   'Щ': 'Sch',  'Ь': '',     'Ы': 'Y',    'Ъ': '',
-		'Э': 'E',    'Ю': 'Yu',   'Я': 'Ya'
-	};
- 
-	for (var i = 0; i < word.length; ++i ) {
-		if (converter[word[i]] == undefined){
-			answer += word[i];
-		} else {
-			answer += converter[word[i]];
-		}
-	}
-    answer = answer.trim().replaceAll(' ','_').toLocaleLowerCase()
-	return answer;
-}
+<script setup lang="ts">
 
 const route = useRoute()
 const id = route.params.id
@@ -172,14 +146,21 @@ content: post?.text,
 extensions: [TiptapStarterKit],
 });
 
+const components = [
+    {component:'p', content:'fsadfsdfdsf',},
+    {component:'h1', content:'sdf sfs dfsdf s',},
+
+]
+
 const save = ()=>{
     if (post) {
-        post.text = editor.value.getHTML().replaceAll('<p></p>','<br>')
+        post.text = editor.value?.getHTML().replaceAll('<p></p>','<br>') || ''
+        post.title_en = postsStore.translit(post.title)
     }
 }
 
 onBeforeUnmount(() => {
-unref(editor).destroy();
+    unref(editor)?.destroy();
 });
 </script>
 

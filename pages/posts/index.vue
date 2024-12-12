@@ -10,7 +10,7 @@
   <div v-else class="blockList">
     <div class="post" v-for="post of postsStore.posts" :key="post.id">
       <NuxtImg :src="`img/${post.img}`" sizes="300px"/>
-      <h2><NuxtLink :to="`/posts/${post.id}_${post.title.toLowerCase().replaceAll(' ','_')}`">{{ post.title }}</NuxtLink></h2>
+      <h2><NuxtLink :to="`/posts/${post.id}_${post.title_en}`">{{ post.title }}</NuxtLink></h2>
       <p>{{ post.preview }}</p>
     </div>
   </div>
