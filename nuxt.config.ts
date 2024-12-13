@@ -7,5 +7,23 @@ export default defineNuxtConfig({
     baseURL: '/inspiration/'
   },
 
-  modules: ['@nuxt/image', '@pinia/nuxt', 'nuxt-tiptap-editor']
+  vite: {
+    ssr: {
+      external: ["@prisma/client"]
+    },
+    resolve: {
+      alias: {
+        ".prisma/client/index-browser": "./node_modules/.prisma/client/index-browser.js"
+      }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+      },
+    }
+  },
+
+  modules: ['@nuxt/image', '@pinia/nuxt', 'nuxt-tiptap-editor', '@prisma/nuxt']
 })

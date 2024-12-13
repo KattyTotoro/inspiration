@@ -14,9 +14,9 @@
   </div>
   <div v-else>Что-то пошло не так...</div>
 
-  <p v-if="!postsStore.posts.length">Публикаций пока нет</p>
+  <p v-if="!posts?.length">Публикаций пока нет</p>
   <div v-else class="blockList">
-    <div class="post" v-for="post of postsStore.posts" :key="post.id">
+    <div class="post" v-for="post of posts" :key="post.id">
       <NuxtImg :src="`img/${post.img}`" sizes="300px"/>
       <h2><NuxtLink :to="`/posts/${post.id}_${post.title_en}`">{{ post.title }}</NuxtLink></h2>
       <p>{{ post.preview }}</p>
@@ -28,8 +28,9 @@
 <script setup lang="ts">
 const route = useRoute()
 const id = route.params.id_title.toString().split('_',1)[0]
-const postsStore = usePosts()
-const post = postsStore.posts.find(el=>el.id==+id)
+const {data} = await useFetch(`/api/post/${id}`)
+const post = ref(data.value?.post)
+const posts = ref(data.value?.posts)
 </script>
 
 <style scoped>

@@ -127,22 +127,24 @@
     <button @click="save">save</button>
     <NuxtLink :to="`/posts/${post.id}_${post.title_en}`">{{ post.title }}</NuxtLink>
     
-    <template v-for="el of components">
+    <!-- <template v-for="el of components">
         <component :is="el.component">{{ el.content }}</component>
-    </template>
+    </template> -->
 
 </section>
 </template>
 
 <script setup lang="ts">
 
+const postsStore = usePosts()
+
 const route = useRoute()
 const id = route.params.id
-const postsStore = usePosts()
-const post = postsStore.posts.find(el=>el.id==+id)
+const {data} = await useFetch(`/api/post/${id}`)
+const post = ref(data.value?.post)
 
 const editor = useEditor({
-content: post?.text,
+content: post.value?.text,
 extensions: [TiptapStarterKit],
 });
 
@@ -152,10 +154,15 @@ const components = [
 
 ]
 
-const save = ()=>{
-    if (post) {
-        post.text = editor.value?.getHTML().replaceAll('<p></p>','<br>') || ''
-        post.title_en = postsStore.translit(post.title)
+const save = async()=>{
+    if (post.value) {
+        post.value.text = editor.value?.getHTML().replaceAll('<p></p>','<br>') || ''
+        post.value.title_en = postsStore.translit(post.value.title)
+        const req = await $fetch(`/api/post/${id}`, {
+            method: 'PUT',
+            body: post.value
+        })
+        console.log(req)
     }
 }
 
