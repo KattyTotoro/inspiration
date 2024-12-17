@@ -232,3 +232,23 @@ footer {
 /* .postPage {
     
 } */
+
+.lk_entrance {
+    margin-left: 1400px;
+}
+
+.lk_entrance input, .lk_entrance button {
+    width: 200px;
+    display: block;
+    border: 2px solid rgb(52, 50, 50);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.lk_entrance button {
+    background-color: rgb(100, 158, 206);
+    font-size: 22px;
+    font-weight: 600;
+}
