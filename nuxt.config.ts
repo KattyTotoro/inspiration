@@ -24,6 +24,13 @@ export default defineNuxtConfig({
       },
     }
   },
+  prisma: {
+    installCLI: true,
+    installClient: true,
+    generateClient: true,
+    installStudio: false,
+    autoSetupPrisma: true
+  },
 
   modules: ['@nuxt/image', '@pinia/nuxt', 'nuxt-tiptap-editor', '@prisma/nuxt']
 })
