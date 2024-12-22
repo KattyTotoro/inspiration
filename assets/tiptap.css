@@ -7,6 +7,10 @@
     font-weight: 600;
 }
 
+.tiptap {
+    height: 500px;
+}
+
 .tiptap p {
     color: green;
 }

@@ -124,6 +124,7 @@
     </button>
     </div>
     <TiptapEditorContent :editor="editor" />
+    
     <button @click="save">save</button>
     <NuxtLink :to="`/posts/${post.id}_${post.title_en}`">{{ post.title }}</NuxtLink>
     

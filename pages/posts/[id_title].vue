@@ -2,10 +2,10 @@
   <section class="content" style="display: flex;">
   
   <div v-if="post" class="postPage">
-    {{ route.params.id_title }}
-    <br>
-    {{ id }}
-    <br>
+    <!-- {{ route.params.id_title }} -->
+    <!-- <br> -->
+    <!-- {{ id }} -->
+    <!-- <br> -->
     <h1>{{ post?.title }}</h1>
     <br>
     <NuxtImg :src="`img/${post?.img}`" sizes="300px"/>
