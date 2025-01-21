@@ -23,7 +23,7 @@ header h1 {
 }
 
 .h1Fly {
-    animation: h1Fly 2s ease-in-out 0.5s forwards;
+    animation: h1Fly 2s ease-in-out forwards;
 }
 
 @keyframes h1Fly {
@@ -42,7 +42,7 @@ header h1 {
 nav {
     position: relative;
     max-width: fit-content;
-    max-height: 700px;
+    height: 700px;
     padding-top: 20px;
     transform: translateX(-135px);
     background: #fefcdf78;
@@ -63,10 +63,10 @@ nav::after {
     text-align: center;
     border-radius: 0 0 8px 8px;
     padding: 10px 0;
-    width: 651px;
+    width: 700px;
     position: absolute;
     left: 145px;
-    top: 650px;
+    top: 700px;
     transform-origin: 0 0;
     transform: rotate(-90deg);
 }
@@ -117,7 +117,7 @@ nav:hover {
 
 /* Все кнопки верхнего меню */
 .topMenu {
-    max-width: fit-content;
+    /* max-width: fit-content; */
     display: flex;
     position: relative;
     top: 253px;
@@ -263,12 +263,20 @@ footer {
 }
 
 @media screen and (max-width:1240px) {
+    header {
+        height: 200px;
+    }
+
+    header h1 {
+        font-size: 5rem;
+    }
+
     nav {
         display: none;
     }
 
     .content {
-        margin-top: 0;
+        /* margin-top: 50px; */
         margin-left: 100px;
     }
 
@@ -278,6 +286,17 @@ footer {
 
     footer {
         margin-left: 100px;
+    }
+}
+
+@media screen and (max-width:1139px) {
+    .content {
+        margin-left: 10px;
+    }
+
+    .topMenu {
+        margin-left: 10px;
+
     }
 }
 
@@ -296,7 +315,7 @@ footer {
 
     .topMenu {
         display: initial;
-        width: 100%;
+        /* width: 100%; */
         margin-left: 3px;
     }
 
@@ -307,7 +326,7 @@ footer {
     .content {
         width: 100%;
         margin-left: 3px;
-        margin-top: 40px;
+        /* margin-top: 40px; */
         padding: 5px;
     }
 
