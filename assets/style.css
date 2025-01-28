@@ -154,6 +154,7 @@ a.topMenuButton {
 
 .topMenuButton:hover {
     cursor: pointer;
+    box-shadow: 0 0 7px 1px rgba(56, 128, 205, 0.893) inset;
 }
 
 
