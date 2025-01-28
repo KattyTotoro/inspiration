@@ -7,28 +7,28 @@
         :disabled="!editor.can().chain().focus().toggleBold().run()"
         :class="{ 'is-active': editor.isActive('bold') }"
     >
-        bold
+        жирный
     </button>
     <button
         @click="editor.chain().focus().toggleItalic().run()"
         :disabled="!editor.can().chain().focus().toggleItalic().run()"
         :class="{ 'is-active': editor.isActive('italic') }"
     >
-        italic
+        курсив
     </button>
     <button
         @click="editor.chain().focus().toggleStrike().run()"
         :disabled="!editor.can().chain().focus().toggleStrike().run()"
         :class="{ 'is-active': editor.isActive('strike') }"
     >
-        strike
+        перечёркнутый
     </button>
     <button
         @click="editor.chain().focus().toggleCode().run()"
         :disabled="!editor.can().chain().focus().toggleCode().run()"
         :class="{ 'is-active': editor.isActive('code') }"
     >
-        code
+        код
     </button>
     <button @click="editor.chain().focus().unsetAllMarks().run()">
         clear marks
