@@ -4,22 +4,23 @@
     <h1>Личный кабинет</h1>
     <strong></strong>
 
-<form class="lk_entrance" action="">
-    <input type="email" value="Введите почту">
-    <input type="password" value="Введите пароль">
-    <button>Войти</button>
-</form>
+    <form class="lk_entrance" action="">
+        <input type="email" value="Введите почту">
+        <input type="password" value="Введите пароль">
+        <button>Войти</button>
+    </form>
 
 
-<div>
-<h2 style="font-size: 28px;">Мои публикации</h2>
+    <div>
+    <h2 style="font-size: 28px;">Мои публикации</h2>
 
-</div>
+    </div>
 
     <div>
 
       <p v-if="!posts?.length">Публикаций пока нет</p>
-      <div v-else class="grid">
+      <NuxtLink to="/lk/post_create">Добавить публикацию</NuxtLink>
+      <div class="grid">
         <div class="post" v-for="post of posts" :key="post.id">
           <NuxtImg :src="`img/${post.img}`" sizes="300px" />
           <h2>

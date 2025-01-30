@@ -125,6 +125,14 @@
     </div>
     <TiptapEditorContent :editor="editor" />
     
+    <div>
+      <form method="post" @submit.prevent="upload">
+        <input type="text" name="alt" v-model="alt" placeholder="Alt">
+        <input type="file" ref="file" placeholder="Изображение">
+        <input type="submit" value="Загрузить">
+      </form>
+    </div>
+
     <button @click="save">save</button>
     <NuxtLink :to="`/posts/${post.id}_${post.title_en}`">{{ post.title }}</NuxtLink>
     
@@ -136,8 +144,30 @@
 </template>
 
 <script setup lang="ts">
+import { translit } from '~/lib/translit';
+import Image from '@tiptap/extension-image'
 
-const postsStore = usePosts()
+const alt = ref('')
+const file = ref(null)
+
+
+const upload = async () => {
+    const fileref = file.value as never as HTMLInputElement
+    const fD = new FormData()
+    if (fileref.files) {
+    fD.append('alt', alt.value)
+    fD.append('img', fileref.files[0])
+    const data = await $fetch('/api/img', {
+        method: 'POST',
+      body: fD
+    })
+    alt.value = ''
+    fileref.value = ''
+    setTimeout(()=>{
+        editor.value?.chain().focus().setImage({ src: data.url, alt: alt.value }).run()
+    }, 500)
+}
+}
 
 const route = useRoute()
 const id = route.params.id
@@ -145,20 +175,28 @@ const {data} = await useFetch(`/api/post/${id}`)
 const post = ref(data.value?.post)
 
 const editor = useEditor({
-content: post.value?.text,
-extensions: [TiptapStarterKit],
+  content: post.value?.text,
+  extensions: [TiptapStarterKit, Image],
 });
 
-const components = [
-    {component:'p', content:'fsadfsdfdsf',},
-    {component:'h1', content:'sdf sfs dfsdf s',},
-
-]
 
 const save = async()=>{
     if (post.value) {
+        post.value.title_en = translit(post.value.title)
+        post.value.text = editor.value?.getHTML().replaceAll('<p></p>', '<br>') || ''
+        const firstImgStartIndex = post.value.text.indexOf('<img src="')
+        if (firstImgStartIndex!=-1) {
+        const firstImgEndIndex = post.value.text.indexOf('"',firstImgStartIndex+10)
+        post.value.img = post.value.text.slice(firstImgStartIndex+10, firstImgEndIndex)
+        }
+        const firstPStartIndex = post.value.text.indexOf('<p>')
+        if (firstPStartIndex!=-1) {
+        const firstPEndIndex = post.value.text.indexOf('</p>',firstPStartIndex+3)
+        post.value.preview = post.value.text.slice(firstPStartIndex+3, firstPEndIndex)
+        }
+        post.value.author_id = 1
+        post.value.rubric_id = 1
         post.value.text = editor.value?.getHTML().replaceAll('<p></p>','<br>') || ''
-        post.value.title_en = postsStore.translit(post.value.title)
         const req = await $fetch(`/api/post/${id}`, {
             method: 'PUT',
             body: post.value

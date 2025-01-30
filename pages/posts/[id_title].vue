@@ -8,7 +8,7 @@
     <!-- <br> -->
     <h1>{{ post?.title }}</h1>
     <br>
-    <NuxtImg :src="`img/${post?.img}`" sizes="300px"/>
+    <NuxtImg :src="`${post?.img}`" sizes="300px"/>
         
     <div v-html="post?.text"></div>
   </div>
@@ -23,6 +23,11 @@
     </div>
   </div>
   </section>
+
+
+  <p>Попопопопопо</p><br><img src="/img/1738260279217.webp" alt=""><p>jklfjgfgлоопвыалдповдоворвдро</p><p>\лпдывлплапждва</p>
+
+
 </template>
 
 <script setup lang="ts">

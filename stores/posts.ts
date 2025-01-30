@@ -54,7 +54,7 @@ export const usePosts = defineStore('posts', () => {
         answer += converter[word[i]]
       }
     }
-      answer = answer.trim().replaceAll(' ','_').toLocaleLowerCase()
+      answer = answer.trim().replaceAll(' ','_').replaceAll(',','').replaceAll('.','_').replaceAll('?','').replaceAll('"','').replaceAll("'",'').replaceAll('`','').replaceAll('*','').replaceAll('/','').replaceAll('-','_').replaceAll('+','').replaceAll('&','').toLocaleLowerCase()
     return answer
   }
 
